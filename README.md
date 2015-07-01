@@ -1,2 +1,0 @@
-# pareekshit-assignments
-pareekshit-assignments
