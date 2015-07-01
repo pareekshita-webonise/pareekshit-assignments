@@ -1,0 +1,6 @@
+git init - initializes the git into the repository.
+git add - adds the current changed files since the last commit
+git branch - it creates a branch with the given branchname
+git checkout - it jumps from current branch to the branch specified.
+git diff - its tells us the difference between the file content since the last commit
+git log - stores the log of the commits made 
