@@ -1,1 +1,1 @@
-hello everyone i am pareekshit ankur from kls git belgaum.
+Hello everyone I am Pareekshit Ankur.I am born and brought up in Bhagalpur, Bihar. I have completed my B.E from KLS GIT Belgaum. I have a younger sibling who lives in Mumbai. My father works for Bihar State Electricity Board. My mother is a house wife. My hobbies include pencil sketching, outdoor sports, travelling and exploring new places and in my leisure time i watch movies and listen to songs.
