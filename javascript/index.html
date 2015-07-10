@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO LIST</title>
+
+    </head>
+    <body>         
+        <script>
+
+            var counter = 0;
+            function addTask(){
+                var textstring=document.getElementById("task").value;
+                var tabValue =document.getElementById("newtask");    
+                var row = document.createElement("tr");
+                var col1 = document.createElement("td");
+                var col2 = document.createElement("td");
+                var col3 = document.createElement("td");
+                row.appendChild(col1); 
+                row.appendChild(col2); 
+                row.appendChild(col3);
+                col1.innerHTML= textstring;              
+                col2.innerHTML= '<input type="button" id="movBtn" onclick="move(this)" value="Completed"></input>';                
+                col3.innerHTML= '<input type="button" id="remBtn" onclick="removetask(this)" value="Remove"></input>';                                        
+                tabValue.appendChild(row);
+                localStorage.setItem("task"+counter,textstring);              
+                counter++;                    
+            }
+            function addHistory(){
+                var textstring = document.getElementById("task").value;
+                var row = document.createElement("tr");
+                var col1 = document.createElement("td");
+                var col2 = document.createElement("td");
+                row.appendChild(col1); 
+                row.appendChild(col2);
+                col1.innerHTML= textstring;              
+                col2.innerHTML= '<input type="button" id="removeBtn" onclick="removetask(this)" value="Remove"></input>';
+                document.getElementById("history").appendChild(row);               
+            }
+            function move(mbtn){                
+                var moveBtn = mbtn.parentNode.parentNode.rowIndex;                
+                var node = mbtn.parentNode.parentNode.parentNode.id;
+                var compValue = document.getElementById("completed");
+                var row = document.createElement("tr");
+                var col1 = document.createElement("td");
+                var col2 = document.createElement("td");
+                row.appendChild(col1); 
+                row.appendChild(col2);               
+                col1.innerHTML= document.getElementById("newtask").rows[moveBtn].cells[0].innerHTML;                
+                col2.innerHTML= '<input type="button" id="rem" onclick="removetask(this)" value="Remove"></input>';           
+                compValue.appendChild(row);
+                document.getElementById("newtask").deleteRow(moveBtn);
+            }
+            function removetask(rbtn){ 
+            var rmBtn = rbtn.parentNode.parentNode.rowIndex;
+            var node = rbtn.parentNode.parentNode.parentNode.id;
+            if(node=="newtask"){
+                document.getElementById("newtask").deleteRow(rmBtn);                
+            }
+            else
+            {
+                document.getElementById("completed").deleteRow(rmBtn);
+            }
+                
+    }
+        </script>
+  <div >
+      <h1><b>What do you want to do today?</b></h1>           
+           <input type="text" name="atask" id="task">
+       
+            <button id="add" onclick="addTask(),addHistory()">AddTask</button>  
+             <table id="MainTable">
+                <tr>
+                 <td>
+                     <table id ="newtask">                                                
+                  <th> TASKS TO DO </th> 
+                  </table>
+                 </td> 
+                    
+                  <td>
+                     <table id="completed">
+                     <th> TASKS COMPLETED </th>
+                </table>
+                  </td>
+                  <td>
+                     <table id="history">
+                     <th> HISTORY OF TASKS </th>
+                </table>
+                  </td>
+             </tr>
+         </table>
+    </div>
+ </body>
+</html>
