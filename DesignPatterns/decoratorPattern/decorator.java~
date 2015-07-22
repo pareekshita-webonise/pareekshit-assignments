@@ -1,0 +1,99 @@
+package decoratorPattern;
+
+public class decorator {
+	package com.javapapers.sample.designpattern;
+
+	public interface Icecream {
+	  public String makeIcecream();
+	}
+	//The above is an interface depicting an icecream. 
+	//I have kept things as simple as possible so that the focus will be on understanding the design pattern.
+	//Following class is a concrete implementation of this interface. This is the base class on which the decorators will be added.
+
+	package com.javapapers.sample.designpattern;
+
+	public class SimpleIcecream implements Icecream {
+
+	  @Override
+	  public String makeIcecream() {
+	    return "Base Icecream";
+	  }
+
+	}
+	//Following class is the decorator class. It is the core of the decorator design pattern. 
+	//It contains an attribute for the type of interface. 
+	//Instance is assigned dynamically at the creation of decorator using its constructor. 
+	//Once assigned that instance method will be invoked.
+
+	package com.javapapers.sample.designpattern;
+
+	abstract class IcecreamDecorator implements Icecream {
+
+	  protected Icecream specialIcecream;
+
+	  public IcecreamDecorator(Icecream specialIcecream) {
+	    this.specialIcecream = specialIcecream;
+	  }
+
+	  public String makeIcecream() {
+	    return specialIcecream.makeIcecream();
+	  }
+	}
+	//Following two classes are similar. 
+	//These are two decorators, concrete class implementing the abstract decorator. 
+	//When the decorator is created the base instance is passed using the constructor and is assigned to the super class. 
+	//In the makeIcecream method we call the base method followed by its own method addNuts(). 
+	//This addNuts() extends the behavior by adding its own steps.
+
+	package com.javapapers.sample.designpattern;
+
+	public class NuttyDecorator extends IcecreamDecorator {
+
+	  public NuttyDecorator(Icecream specialIcecream) {
+	    super(specialIcecream);
+	  }
+
+	  public String makeIcecream() {
+	    return specialIcecream.makeIcecream() + addNuts();
+	  }
+
+	  private String addNuts() {
+	    return " + cruncy nuts";
+	  }
+	}
+	package com.javapapers.sample.designpattern;
+
+	public class HoneyDecorator extends IcecreamDecorator {
+
+	  public HoneyDecorator(Icecream specialIcecream) {
+	    super(specialIcecream);
+	  }
+
+	  public String makeIcecream() {
+	    return specialIcecream.makeIcecream() + addHoney();
+	  }
+
+	  private String addHoney() {
+	    return " + sweet honey";
+	  }
+	}
+	Execution of the decorator pattern
+
+	I have created a simple icecream and decorated that with nuts and on top of it with honey. 
+	//We can use as many decorators in any order we want. 
+	//This excellent flexibility and changing the behaviour of an instance of our choice at runtime is the main advantage of the decorator design pattern.
+
+	package com.javapapers.sample.designpattern;
+
+	public class TestDecorator {
+
+	  public static void main(String args[]) {
+	    Icecream icecream = new HoneyDecorator(new NuttyDecorator(new SimpleIcecream()));
+	    System.out.println(icecream.makeIcecream());
+	  }
+
+	}
+	Output
+
+	Base Icecream + cruncy nuts + sweet honey
+}
