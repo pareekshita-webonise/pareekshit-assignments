@@ -1,0 +1,36 @@
+
+body{
+	background-color: white;
+}
+.container{
+	width: 1300px;
+	margin: 0 auto;
+}
+h1{
+	font-size: 36px;
+	padding-left: 10px;
+	font-family: "Arial";
+}
+h2{
+	font-size: 34px;	
+}
+.banner{
+	font-family: "Arial";
+	font-size: 36px;
+	font-weight: normal;
+	padding: 60px;
+	background-color: darkgrey;
+	text-align: center;
+	
+}
+.aboutus{
+	font-size: 14px;
+	font-family: "Arial";
+	text-align: justify;
+	padding: 0px 15px 0px 15px;
+}
+
+h3{
+	font-size: 18px;
+	font-weight: normal;
+}
