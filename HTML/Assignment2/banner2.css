@@ -98,18 +98,24 @@ footer{
 	text-align: center;
 }
 .flist li{
-	display: inline;
+	display: block;
+	float: left;
 	margin: 0 auto;	
 }
 .flist a:hover{
 	color: #444444;
+}
+flist li:first-child{
+	padding-left:  225px;
 }
 .flist a{
 	color: #ff8000;
 	text-decoration: none;
 	margin: 0px 10px;
 }
-
+.firstelem{
+	margin-left: 235px;
+}
 .clear {
 	clear: both;
 }
