@@ -21,7 +21,6 @@ header{
 	list-style-type: none;
 	float: left;
 	font-size: 15px;
-	margin:18px 15px;
 }
 .hlist form{
 	float: right;
@@ -32,6 +31,7 @@ header{
 	color: #444444;
 }
 .hlist a{
+	display: block;
 	padding: 15px;
 	color: #000;
 	text-decoration: none;
@@ -41,25 +41,14 @@ header{
 	border-color: #efefef;
 	position: relative;
 }
-.searchbar input{
+.searchbar{
 	width: 236px;
 	height: 36px;
 	border-radius: 10px;
 	float: right;
 	margin-top: 8px;
 }
-.searchbar button{
-	position: absolute;
-	right: 0px;
-	width: 40px;
-	height: 37px;
-	border: 0px;
-	border-radius: 10px;
-	background-color: white;
-	margin-top: 11px;
-	margin-right: 2px;
-}
-.searchbar button img{
+.searchbutton{
 	padding: 10px 10px;
 	right: 0px;
 	height: 20px;
@@ -103,31 +92,33 @@ h4{
 	margin-bottom: 60px;
 	padding: 20px 0px;
 }
-.banner1 a{
-	text-decoration: none;
-}
 .banner1 li{
 	list-style-type: none;
 	display: block;
-	margin-left: 0px;
-	margin-right: 20px;
 }
-.banner1 li:last-child{
-	margin-right: 0px;
-}
-.rectangle{
+.rectangle li{
 	float: left;
 	border-radius: 10px;
 	background-color: white;
     width: 220px;
     height: 60px;
     list-style-type: none;
+    margin-right: 20px;
 }
 .rectangle img{
 	float: right;
-	font-size: 0px;
 	right: 0px;
 	padding: 16px 16px;
+}
+.text{
+	margin-top: 18px;
+ 	padding-left: 19px;
+  	font-size: 22px;
+  	float: left;
+  	color: #222222;
+}
+.banner1 li:last-child{
+	margin-right: 0px;
 }
 h2{
 	font-size: 40px;
@@ -146,6 +137,7 @@ h2{
 	padding: 15px;
 	color: white;
 	font-family: arial;
+	text-decoration: none;
 }
 .belowtext h5{
 	font-size: 18px;
