@@ -68,14 +68,15 @@ header{
 	clear: both;
 }
 .blank{
-	background-color: #000000; 	
+	background-color: #000000;
+	background-image: url(banner.jpg);
+	
+	background-position: center top;
+	background-repeat: no-repeat; 	
 }
 .banner{
-	background-image: url(banner.jpg);
 	height: 544px;
 	position: relative;
-	background-position: center top;
-	background-repeat: no-repeat;
 }
 .banner h1{
 	position: absolute;
