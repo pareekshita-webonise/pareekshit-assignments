@@ -2,6 +2,12 @@
 	margin: 0px;
 	padding: 0px;
 }
+ol,ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
 .container{
 	width: 940px;
 	margin: 0 auto;
@@ -21,6 +27,7 @@ header{
 	list-style-type: none;
 	float: left;
 	font-size: 15px;
+	margin-top: 18px;
 }
 .hlist form{
 	float: right;
@@ -31,28 +38,31 @@ header{
 	color: #444444;
 }
 .hlist a{
-	display: block;
 	padding: 15px;
 	color: #000;
 	text-decoration: none;
 }
 .searchbar{
-	border: 1px;
-	border-color: #efefef;
-	position: relative;
-}
-.searchbar{
-	width: 236px;
-	height: 36px;
-	border-radius: 10px;
+	width: 238px;
+	height: 38px;
+	border: solid 1px;
+	border-color: #000;
 	float: right;
-	margin-top: 8px;
+	border-radius:5px;
+	margin-top: 7px;
 }
-.searchbutton{
-	padding: 10px 10px;
-	right: 0px;
-	height: 20px;
+.searchbar input:first-child{
+	float: right;
+	padding: 10px;
 	width: 20px;
+	height: 20px;
+}
+.searchbar input{
+	float: left;
+	height: 38px;
+	border: 0;
+	width: 194px;
+	margin-left: 2px;
 }
 .clear{
 	clear: both;
@@ -60,31 +70,32 @@ header{
 .blank{
 	background-color: #000000; 	
 }
-.banner img{
-	width: 940px;
-}
 .banner{
-	height: 465px;
+	background-image: url(banner.jpg);
+	height: 544px;
 	position: relative;
+	background-position: center top;
+	background-repeat: no-repeat;
 }
-.banner span{
+.banner h1{
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
-}
-h1{
 	font-weight: normal;
 	font-size: 44px;
 	color: white;
 	font-family: sans-serif;
-	margin-bottom: 5px;
+	margin-bottom: 45px;
 }
-h4{
+.banner h4{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
 	font-family: times new roman;
 	font-weight: normal;
 	color: white;
 	font-size: 22px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 .banner1{
 	background-color: #ecab1f;
@@ -92,11 +103,8 @@ h4{
 	margin-bottom: 60px;
 	padding: 20px 0px;
 }
-.banner1 li{
-	list-style-type: none;
-	display: block;
-}
-.rectangle li{
+.rlist ul li{
+	position: relative;
 	float: left;
 	border-radius: 10px;
 	background-color: white;
@@ -104,21 +112,26 @@ h4{
     height: 60px;
     list-style-type: none;
     margin-right: 20px;
+    display: block;
 }
-.rectangle img{
-	float: right;
+.rlist ul li:last-child{
+	margin-right: 0;
+}
+.rlist ul li a{
+	border-radius: 10px;
+	padding: 17px 15px;
+	font-size: 22px;
+	color: #222222;
+	display: block;
+}
+.rlist ul li a:hover{
+	background-color: darkgrey;
+}
+.rlist img{
+	position: absolute;
+	margin-right: 16px;
+	font-size: 0px;
 	right: 0px;
-	padding: 16px 16px;
-}
-.text{
-	margin-top: 18px;
- 	padding-left: 19px;
-  	font-size: 22px;
-  	float: left;
-  	color: #222222;
-}
-.banner1 li:last-child{
-	margin-right: 0px;
 }
 h2{
 	font-size: 40px;
@@ -131,13 +144,19 @@ h2{
 	margin-right: 20px;
 	list-style-type: none;
 	display: block;
-	background-color: #4466ff;
+	margin-bottom: 50px;
+}
+.piclist li:last-child{
+	margin-right: 0;
+}
+.piclist img{
+	display: block;
 }
 .belowtext{
-	padding: 15px;
+	background-color: #4466ff;
 	color: white;
+	padding: 15px;
 	font-family: arial;
-	text-decoration: none;
 }
 .belowtext h5{
 	font-size: 18px;
@@ -147,7 +166,4 @@ h2{
 }
 .lastlist li{
 	margin-right: 0px;
-}
-footer{
-	margin-top: 50px;
 }
